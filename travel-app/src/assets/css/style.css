@@ -1,0 +1,1120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+* {
+    /* user-select: none; */
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444 !important;
+    /* height: 200vh; */
+    /* overflow: hidden; */
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+}
+
+section, .section {
+    overflow: clip;
+    padding: 60px 40px;
+}
+
+.button1, .button1:hover, .button1:active {
+    background-color: #088F8F !important;
+    color: #fff !important;
+    width: auto;
+    border: 1px solid #6495ED !important;
+    padding: 12px 18px;
+}
+
+.button1 i {
+    font-size: 24px;
+}
+
+.button2, .button2:hover, .button2:active {
+    background: #8DD3BB !important;
+    border: 1px solid #8DD3BB !important;
+    padding: 7px 14px;
+    border-radius: 4px;
+}
+
+.button3 {
+    border: 1px solid #8DD3BB;
+    background: transparent;
+    padding: 4px 10px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.button4 {
+    border: 1px solid #112211;
+    background: #112211;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.stays_show_more_res {
+    background: #ff724a !important;
+    border: 1px solid #ff724a !important;
+    color: #fff !important;
+    font-weight: 500;
+}
+
+a {
+    color: #ff4a17;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff724a;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+/* home section start */
+#home {
+    background-image: url(../img/banner_img.png);
+    /* height: 100vh; */
+    /* height: 700px; */
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    background-attachment: fixed;
+    overflow: visible;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#home .container-fluid {
+    position: relative;
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* .home_heading {
+    padding: 90px 7px;
+} */
+.home_heading {
+    padding: 90px 7px 45px 7px;
+}
+
+.search_bar_container {
+    /* padding-bottom: 40px; */
+    position: relative;
+    display: inline-block;
+}
+
+.search_bar_container .search_bar_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar-input {
+    padding: 10px 16px;
+    width: 255px;
+}
+
+.searchBar_button, .searchBar_button:hover, .searchBar_button:active {
+    background: #088F8F !important;
+    color: #fff !important;
+    border-radius: 20px;
+    border: 1px solid #088F8F !important;
+    padding: 8px 18px;
+}
+
+.searchBar-input, .searchBar-input:focus, .searchBar-input:focus-visible {
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search_dropdown {
+    display: inline-block;
+    background: #fff;
+    text-align: left;
+    overflow-y: auto;
+    width: 230px;
+    padding: 9px 0;
+    position: absolute;
+    left: 4px;
+    top: calc(100% + 4px);
+    /* Position the dropdown below its container */
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 7px;
+    max-height: 200px;
+    /* Limit the maximum height of the dropdown */
+}
+
+.search_dropdown_row {
+    font-size: 13px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.search_dropdown_row:hover {
+    color: #088F8F;
+}
+
+.search_dropdown.scrollable {
+    height: 209px;
+    overflow-y: auto;
+}
+
+#home h1 {
+    margin: 0 0 10px 0;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 70px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #fff;
+}
+
+#home h2 {
+    color: #eee;
+    margin-bottom: 10px;
+    letter-spacing: 7px;
+    margin-top: 10px;
+    font-size: 28px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+#home h3 {
+    color: #eee;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.query_box {
+    background: rgba(255, 255, 255, 1);
+    /* height: 280px; */
+    width: 90%;
+    margin: 0 auto;
+    /* top: 40%; */
+    position: relative;
+    border-radius: 20px;
+    padding: 20px 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.query_box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.9;
+    filter: drop-shadow(2px 4px 6px black);
+    background: #fff;
+    border-radius: 20px;
+    background-image: url(data:image/png;base64,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);
+}
+
+.query_box ul li {
+    list-style-type: none;
+    padding: 6px 10px;
+    color: #666;
+}
+
+.control-label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #666;
+}
+
+.input_box input, .input_box select, .input_box input:focus, .input_box select:focus {
+    /* background: transparent !important; */
+    background: rgba(109, 192, 255, 0.009) !important;
+    border: unset !important;
+    outline: unset !important;
+    box-shadow: unset !important;
+    border-radius: 0 !important;
+    font-weight: 700;
+    color: #000;
+    font-size: 20px;
+}
+
+.input_box.flight_search_box {
+    background: rgb(13, 110, 253, 0.1);
+    padding: 10px 10px 10px 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+#services {
+    padding: 60px 40px;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.section-title p {
+    font-size: 16px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    color: #263d4d;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+}
+
+/* booking */
+label.book_label {
+    background: #fff !important;
+    padding: 3px;
+    font-size: 12px;
+    border-radius: 4px;
+    position: absolute;
+    top: -12px;
+    left: 26px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #ccc;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem rgba(13, 110, 253, .25);
+}
+
+.book_input {
+    font-size: 13px;
+    height: 45px;
+    font-weight: 700;
+}
+
+h4.filter-title {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+}
+
+.accordion-button:not(.collapsed) {
+    background: transparent;
+    box-shadow: unset;
+}
+
+.accordion-button:focus {
+    box-shadow: unset;
+}
+
+.accordion-item {
+    border: none;
+    border-top: 1px solid #dee2e6 !important;
+}
+
+.accordion-button {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Open Sans';
+    padding-bottom: 3px;
+}
+
+.accordion-item:first-of-type {
+    border-top: none !important;
+}
+
+.accordion-body ul li {
+    list-style-type: none;
+    padding: 4px 0;
+}
+
+.range-slider {
+    width: 300px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.rangeValues {
+    display: block;
+    padding-bottom: 8px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    border: 1px solid white;
+    width: 300px;
+    position: absolute;
+    left: 0;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 4px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #8DD3BB;
+    margin-top: -6px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #21c1ff;
+
+}
+
+
+/*hide the outline behind the border*/
+
+input[type=range]:-moz-focusring {
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+    width: 300px;
+    height: 5px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+    /*remove default tick marks*/
+    color: transparent;
+    z-index: -4;
+
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #088F8F;
+}
+
+.find_stays h4.titles {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.find_stays span, .flight_emirates, .flight_ewrbna {
+    font-size: 13px;
+    color: #777;
+}
+
+.find_stays .right_line {
+    border-right: 1px solid #ccc;
+}
+
+.starting_from {
+    font-size: 12px;
+    color: #777;
+    font-weight: 600;
+}
+
+.start_from_price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff724a;
+}
+
+#bookings .card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border: unset;
+    border-radius: 10px;
+}
+
+img.stay_img {
+    width: 205px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+img.flights_img {
+    width: 100%;
+    /* border-radius: 10px; */
+}
+
+.bookings p {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.bookings h4.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bookings i.fa-star {
+    color: orange;
+}
+
+.bookings span.price {
+    font-size: 13px;
+    color: #ff724a;
+    font-weight: 600;
+}
+
+.destination-item {
+    height: 100%;
+    /* margin-bottom: 30px; */
+}
+
+/* .destination-wrap img {
+    margin-bottom: 23px;
+} */
+
+/*-------------------------- services---------------------------- */
+/* section {
+    padding: 60px 0 0 0;
+} */
+
+#services {
+    background-color: #f3f5fa;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+/* h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 130px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+} */
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ff724a;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 130px !important;
+    height: 2px;
+    background: #ddd;
+    bottom: 0;
+    left: calc(50% - 60px);
+}
+
+/* ---------------------------destinations--------------------- */
+.destination-wrap {
+    margin-bottom: 23px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.services .card-body {
+    text-align: left;
+}
+
+.destination-info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.destination-info h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.services .title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.services .title a {
+    color: #333 !important;
+}
+
+.services .title a:hover, .services .card:hover a {
+    color: #ff724a !important;
+}
+
+.services .icon {
+    margin-bottom: 12px;
+}
+
+.services p.description {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.services .card {
+    height: 100%;
+    margin: 0 6px;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+    border: unset;
+    border-radius: 10px;
+}
+
+.services .card:hover {
+    transform: translateY(-5px);
+}
+
+.services-box {
+    margin-bottom: 35px;
+}
+
+.destinations .destination-wrap::before {
+    transition: 0.3s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background: rgba(57, 64, 71, 0);
+    color: #fff;
+    z-index: 1;
+}
+
+.destinations .destination-wrap:hover::before {
+    background: rgba(57, 64, 71, 0.6);
+}
+
+.destinations .destination-wrap .destination-info {
+    z-index: 2;
+    /* Ensure text is above the background layer */
+}
+
+.destinations .destination-wrap:hover img {
+    transform: scale(1.2);
+}
+
+.destinations .destination-wrap img {
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+}
+
+.plan_trip .places_img {
+    height: 85px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.trip-place-info {
+    text-align: left;
+}
+
+.trip-place-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+.trip-place-info span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    padding: 0 10px 0 0;
+}
+
+.list-style-dot i {
+    font-size: 5px;
+}
+
+.plan_trip .sub-title {
+    text-align: left;
+}
+
+section.plan_trip {
+    /* background: #f3f5fa; */
+    background: rgba(243, 245, 250, 0.5);
+}
+
+.plan_trip .card {
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    border: unset;
+}
+
+.plan_trip .sub-title h2, .fallinto_travles .sub-title h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/*----------------------------- contact--------------------- */
+.contact .info-box {
+    color: #0b2341;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 20px 15px 30px 15px;
+    background: #fff;
+}
+
+.contact .contact-info-form {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.contact .info-box i {
+    font-size: 28px;
+    padding-bottom: 15px;
+    border-radius: 50%;
+    color: #ff724a;
+}
+
+.contact .info-box h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.contact .contact-info-form button.btn.button5 {
+    background: #ff724a;
+    color: #fff;
+    border: 1px solid #ff724a;
+}
+
+/* ------------------------about us----------------------------------- */
+.about .about_content {
+    background: #eff5f5;
+    padding: 40px 40px;
+}
+
+.about_content .content h3 {
+    font-weight: 700;
+}
+
+.about img {
+    object-fit: cover;
+}
+
+.about .about_learn_more {
+    background: linear-gradient(341deg, rgba(41, 131, 163, 1) 35%, rgba(0, 219, 255, 1) 100%);
+    border: 1px solid rgba(0, 219, 255, 1);
+    color: #fff;
+}
+
+/* -----------------------------team---------------------------- */
+section#team {
+    background: #f3f5fa;
+}
+
+.team .team_member .team_member-img {
+    margin: 0 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #f4f4f4;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+}
+
+.team .team_member .team_member-img img {
+    position: relative;
+    z-index: 1;
+}
+
+.team .team_member .team_member-info {
+    margin-top: 30px;
+}
+
+.team .team_member .team_member-info h4 {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.team .team_member .team_member-info span {
+    font-style: italic;
+    display: block;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.team .team_member .team_member-info p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.team .team_member .team_member-img .social {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding-bottom: 20px;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.team .team_member .team_member-img .social a {
+    transition: 0.3s;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+.team .team_member:hover .team_member-img .social {
+    padding-bottom: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* -------------------------faq--------------------------- */
+.faq .faq-item .image-stack {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.faq .faq-item .image-stack .back-faq-img {
+    grid-column: 4/-1;
+    grid-row: 1;
+    width: 100%;
+    z-index: 1;
+}
+
+.faq .faq-item img {
+    border: 6px solid #fff;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    transform: rotateY(180deg);
+}
+
+.faq .faq-item .image-stack .front-faq-box {
+    grid-row: 1;
+    grid-column: 2/span 6;
+    text-transform: capitalize;
+    margin-top: 20%;
+    width: 100%;
+    z-index: 2;
+    /* background-color: #0b2341; */
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    background: #366779;
+    padding: 40px 30px;
+    color: #fff;
+    height: fit-content;
+}
+
+.front-faq-box h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.faq .icon i {
+    font-size: 14px;
+    background: rgba(17, 28, 85, 1);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.faq .icon {
+    padding: 1px 0 30px 0;
+}
+
+.faq .faq-item .contact_us, .faq .faq-item .contact_us:hover {
+    background: linear-gradient(151deg, rgba(255, 182, 41, 1) 10%, rgba(255, 218, 86, 1) 59%, rgba(255, 215, 166, 1) 100%);
+    color: #333;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.faq .faq-ques .accordion-item {
+    padding-bottom: 8px;
+}
+
+.faq .faq-ques .accordion-header::before {
+    content: unset;
+}
+
+/* homes flight and hotels section */
+.flights_hotels_wrap img {
+    border-radius: 20px;
+}
+
+.flights_hotels_wrap, .fallinto_travles_wrap {
+    position: relative;
+}
+
+.flights_hotels_wrap .flight_hotels_info, .fallinto_travles_info {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    padding-bottom: 35px;
+    transition: 0.3s;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.flight_hotels_info h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.flight_hotels_info p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.show_more {
+    background: linear-gradient(341deg, rgba(41, 131, 163, 1) 35%, rgba(0, 219, 255, 1) 100%);
+    border: 1px solid rgba(41, 131, 163, 1);
+    color: #fff;
+    width: 145px !important;
+    margin: 0 auto;
+}
+
+.fallinto_travles_wrap img, .shri_lanka img, .shri_lanka_img {
+    border-radius: 20px;
+    transition: 0.6s;
+}
+
+.shri_lanka img:hover {
+    border-radius: 20px;
+    transform: scale(1.2);
+}
+
+.fallinto_travles_info {
+    padding: 30px 12px;
+}
+
+.fallinto_travles_info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 160px;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.fallinto_travles_info h4 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.fallinto_travles_info p {
+    margin-bottom: 10px !important;
+}
+
+.fallinto_travles {
+    background-image: url(../img/our_services_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.fallinto_travles::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.88);
+    width: 100%;
+    height: 100%;
+}
+
+/* flight booking info */
+.flightbook_details h5 {
+    font-size: 16px;
+}
+
+.flightbook_details span {
+    font-size: 13px;
+}
+
+.flightbook_details i {
+    background-color: #8DD3BB;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.flightbook_details .card_title {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.package-title h5 {
+    font-size: 19px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.ratings button.active {
+    background: #8DD3BB;
+}
+
+/* payment */
+.payment p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.payment span {
+    color: #555;
+}
+
+/* booked success */
+.ticket_total_amt h5 {
+    font-size: 16px;
+}
+
+.tour_booking_amount_area li span {
+    font-weight: 600;
+    /* padding: 8px 0; */
+}
+
+.ticket_box_right {
+    background: #366779;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ticket_box_right h5 {
+    font-size: 18px;
+}

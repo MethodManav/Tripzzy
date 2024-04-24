@@ -1,0 +1,60 @@
+.fixed-top {
+    transition: all 0.5s;
+}
+.fixed-top.scrolled {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar .right_navbar li {
+    white-space: nowrap;
+    padding: 8px 12px;
+}
+
+.navbar .left_navbar li{
+    white-space: nowrap;
+    padding: 8px;
+}
+
+.navbar .nav-link {
+    color: #fff  !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.navbar .right_navbar li .nav-link:before, .navbar .left_navbar li .nav-link:before {
+   content: "";
+   width: 100%;
+   height: 2px;
+   background: #ff724a;
+   position: absolute;
+   top: 32px;
+   left: 0;
+   transition: all 0.3s ease-in-out;
+   opacity: 0;
+}
+
+.right_navbar li .nav-link:hover::before, .right_navbar li .nav-link.active::before, .left_navbar li .nav-link:hover::before, .left_navbar li .nav-link.active::before {
+    opacity: 1;
+}
+
+a.btn.action_btn {
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 18px;
+    border: 2px solid #fff;
+    margin-left: 38px;
+    transition: all 0.3s ease-in 0s;
+}
+
+a.btn.action_btn:hover {
+     padding: 5px 18px;
+     border: 2px solid #ff724a;
+     transition: all 0.3s ease-in 0s;
+     background-color: #ff724a;
+}
+.navbar .left_navbar li a:hover{
+    color: #ff724a;
+}
