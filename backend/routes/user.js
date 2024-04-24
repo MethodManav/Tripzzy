@@ -5,7 +5,7 @@ const zod = require("zod");
 const { User, admin } = require("../databse/db");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../config");
-const protect= require('bcryptjs')
+
 
 router.use(express.json())
 
@@ -83,33 +83,39 @@ router.post("/signup", async (req, res) => {
     })
 })
 
-
 const signinBody = zod.object({
     username: zod.string().email(),
-
+	password: zod.string()
 })
 
 router.post("/signin", async (req, res) => {
+    const { success } = signinBody.safeParse(req.body)
+    if (!success) {
+        return res.status(411).json({
+            message: "Email already taken / Incorrect inputs"
+        })
+    }
 
     const user = await User.findOne({
-        username: req.body.loginusername,
-        password:req.body.loginpass
+        username: req.body.username,
+        password: req.body.password,
     });
-
-    if (user) {
+    console.log(user);
+         if (user) {
         const token = jwt.sign({
             userId: user._id
         }, JWT_SECRET);
         const userId = user._id;
-        const firstname=user.firstname;
+        const firstname=user.firstname
   
         res.json({
             token: token,
-            userId,
-            firstname
+            User_ID:userId,
+            Name:firstname,
             
         })
         return;
+    
     }
     res.status(411).json({
         message: "Error while logging in"

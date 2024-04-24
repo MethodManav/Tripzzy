@@ -47,20 +47,21 @@ const Login = () => {
 
   const handlesigin = async () => {
     console.log(loginusername);
+    console.log(loginpassword);
     try {
       const res = await axios.post(
         "http://localhost:3000/api/v1/tripzzy/user/signin",
         {
-          loginusername: loginusername,
-          loginpass: loginpassword,
+          username: loginusername,
+          password: loginpassword,
         }
       );
       alert("Login Successfully");
       navigate("/");
       console.log(res.data);
       localStorage.setItem("Token", res.data.token);
-      localStorage.setItem("User_id", res.data.userId);
-      localStorage.setItem("name", res.data.firstname);
+      localStorage.setItem("User_id", res.data.User_ID);
+      localStorage.setItem("Name", res.data.Name);
     } catch (error) {
       console.log(error);
     }

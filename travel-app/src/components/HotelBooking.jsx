@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const HotelBooking = () => {
+  const [fname, setfname] = useState("");
+  const [lname, setlname] = useState("");
+  const [email, setemail] = useState("");
+  const [phone, setphone] = useState("");
+  const [proof, setproof] = useState("");
+  const [checkin, setin] = useState("");
+  const [checkout, setout] = useState("");
+  const [guest, setguest] = useState("");
+  const navigation = useNavigate();
+  const user_id = localStorage.getItem("User_id");
+
   const handlepayment = async () => {
     console.log("hii");
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/tripzzy//booking/flightbooking",
+        "http://localhost:3000/api/v1/tripzzy/booking/hotelbooking",
         {
           user_id: user_id,
-          firstname: firstname,
-          lastname: lastname,
-          gender: gender,
-          phone: phone,
+          firstname: fname,
+          lastname: lname,
           email: email,
-          classtype: classtype,
-          passport: passport,
-          date: date,
-          from: fromCity,
-          to: toCity,
+          phone: phone,
+          id_proof: proof,
+          date: checkin,
+          checkoutdate: checkout,
+          room: guest,
         }
       );
-      alert("Ticket Booked Successfully");
+      alert("Hotel Booked Successfully");
       navigation("/");
     } catch (error) {
       console.log(error);
@@ -51,6 +61,7 @@ const HotelBooking = () => {
                           type="text"
                           className="form-control"
                           placeholder="First Name"
+                          onChange={(e) => setfname(e.target.value)}
                         />
                       </div>
                     </div>
@@ -63,6 +74,7 @@ const HotelBooking = () => {
                           type="text"
                           className="form-control"
                           placeholder="Last Name"
+                          onChange={(e) => setlname(e.target.value)}
                         />
                       </div>
                     </div>
@@ -75,6 +87,7 @@ const HotelBooking = () => {
                           type="email"
                           className="form-control"
                           placeholder="Email"
+                          onChange={(e) => setemail(e.target.value)}
                         />
                       </div>
                     </div>
@@ -87,6 +100,7 @@ const HotelBooking = () => {
                           type="text"
                           className="form-control"
                           placeholder="Phone Number"
+                          onChange={(e) => setphone(e.target.value)}
                         />
                       </div>
                     </div>
@@ -99,6 +113,7 @@ const HotelBooking = () => {
                           type="text"
                           className="form-control"
                           placeholder="Adhaar/License Number"
+                          onChange={(e) => setproof(e.target.value)}
                         />
                       </div>
                     </div>
@@ -111,6 +126,7 @@ const HotelBooking = () => {
                           type="date"
                           className="form-control"
                           placeholder=""
+                          onChange={(e) => setin(e.target.value)}
                         />
                       </div>
                     </div>
@@ -123,6 +139,7 @@ const HotelBooking = () => {
                           type="date"
                           className="form-control"
                           placeholder=""
+                          onChange={(e) => setout(e.target.value)}
                         />
                       </div>
                     </div>
@@ -131,17 +148,38 @@ const HotelBooking = () => {
                         <label htmlFor="" className="form-label">
                           Rooms, Guests
                         </label>
-                        <select name="" className="form-select" id="">
-                          <option value="">1 Room, 1 Guests</option>
-                          <option value="">1 Room, 2 Guests</option>
-                          <option value="">1 Room, 3 Guests</option>
-                          <option value="">2 Room, 4 Guests</option>
-                          <option value="">2 Room, 7 Guests</option>
+                        <select
+                          name=""
+                          className="form-select"
+                          id=""
+                          onChange={(e) => setguest(e.target.value)}
+                        >
+                          <option value="">Select Room</option>
+                          <option value="1 Room, 1 Guests">
+                            1 Room, 1 Guests
+                          </option>
+                          <option value="1 Room, 2 Guests">
+                            1 Room, 2 Guests
+                          </option>
+                          <option value="1 Room, 3 Guests">
+                            1 Room, 3 Guests
+                          </option>
+                          <option value="2 Room, 4 Guests">
+                            2 Room, 4 Guests
+                          </option>
+                          <option value="2 Room, 7 Guests">
+                            2 Room, 7 Guests
+                          </option>
                         </select>
                       </div>
                     </div>
                     <div className="col-lg-12 text-center">
-                      <button className="btn btn-success mt-2">Submit</button>
+                      <button
+                        className="btn btn-success mt-2"
+                        onClick={handlepayment}
+                      >
+                        Submit
+                      </button>
                     </div>
                   </div>
                 </div>

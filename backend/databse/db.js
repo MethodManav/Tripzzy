@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const db_URL=process.env.DATABASE_URL
 
-mongoose.connect(db_URL)
+
+
+mongoose.connect("YOUR MONGO URL")
 
 
 
@@ -36,9 +37,6 @@ const userSchema = new mongoose.Schema({
     phone:{
         type:Number,
         require:true,
-    },
-    img:{
-        type:Buffer
     },
     flight_ticket:[{
         type:mongoose.Schema.Types.ObjectId,
@@ -203,11 +201,7 @@ const adminschema=new mongoose.Schema({
         require:true,
 
     },
-    age:{
-        type:Number,
-        require:true,
-    },
-    gender:{
+    email:{
         type:String,
         require:true
     },
@@ -215,12 +209,13 @@ const adminschema=new mongoose.Schema({
         type:Number,
         require:true,
     },
-    hotelid:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Hotel',
-    }],
-    location:{
-        type:String,
+    date:{
+        type:Date,
+        require:true,
+    },
+    checkoutdate:{
+    
+        type:Date,
         require:true,
     },
     room:{

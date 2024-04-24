@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   const tokendata = localStorage.getItem("Token");
-  const namevalue = localStorage.getItem("name");
+  const namevalue = localStorage.getItem("Name");
 
   const toggleTable = (isFlights) => {
     setShowFlights(isFlights);

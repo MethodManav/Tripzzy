@@ -1,8 +1,8 @@
 const express=require('express')
-const router = express.Router();
-const { bookingvalidation } = require('../validation');
-const { Flight_Ticket, User } = require('../databse/db');
+
+const { Flight_Ticket, User, HoteTicket } = require('../databse/db');
 const { adminmiddleware } = require('../middleware');
+const router = express.Router();
 
 router.use(express.json());
 
@@ -69,6 +69,39 @@ router.get("/myticket", async (req, res) => {
      
   }
 });
+
+router.post("/hotelbooking",async(req,res)=>{
+  
+  const book= await HoteTicket.create({
+          
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email:req.body.email,
+        phone:req.body.phone,
+        id_proof:req.body.id_proof,
+        room:req.body.room,
+        date:req.body.date,
+        checkoutdate:req.body.checkoutdate,
+
+  })
+  const user_id=req.body.user_id
+  const hotelbook_id=book._id
+  console.log(user_id);
+  console.log(hotelbook_id);
+  const userticket=await User.updateOne({
+    _id:user_id
+  },{
+    "$push":{
+      hotel_ticket: hotelbook_id
+    }
+  })
+
+  res.status(200).json({
+    userticket:userticket
+  })
+
+})
+
 
  
 module.exports = router;
